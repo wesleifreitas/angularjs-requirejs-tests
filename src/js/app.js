@@ -1,11 +1,13 @@
 define(['angular',
     'angular-route',
-    './controllers/index',
-    './directives/index',
-    './filters/index',
-    './services/index'
+    'px-config',
+    '../custom/controllers/index',
+    '../custom/directives/index',
+    '../custom/filters/index',
+    '../custom/services/index'
 ], function(angular) {
     var app = angular.module('myApp', [
+        'pxConfig',
         'app.controllers',
         'app.directives',
         'app.filters',
@@ -17,21 +19,22 @@ define(['angular',
         angular.bootstrap(document, ['myApp']);
     };
 
+    /*
     app.config(function($routeProvider, $locationProvider) {
         console.info('app.config');
         
         $routeProvider.when('/login', {
-            templateUrl: 'partials/partial1.html',
+            templateUrl: 'partials/login.html',
             //controller: 'loginCtrl',
             //controllerAs: 'vm'
         });
         $routeProvider.when('/home', {
-            templateUrl: 'partials/partial2.html',
+            templateUrl: 'partials/home.html',
             //controller: 'homeCtrl',
             //controllerAs: 'vm'
         });
         $routeProvider.when('/', {
-            templateUrl: 'partials/partial2.html',
+            templateUrl: 'partials/home.html',
             //controller: 'homeCtrl',
             //controllerAs: 'vm'
         });
@@ -40,6 +43,6 @@ define(['angular',
         });
         
     });
-
+    */
     return app;
 });
