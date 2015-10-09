@@ -1,18 +1,19 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="product" content="px-project">
+    <meta name="description" content="Phoenix Project">
+    <meta name="author" content="Weslei Freitas, weslei.rfreitas@gmail.com">
+    <link href="favicon.ico" rel="shortcut icon">
+    <title>px-project</title>
 </head>
 
-<body>
-    <ul>
-        <li><a href="#/login">view1</a></li>
-        <li><a href="#/home">view2</a></li>
-    </ul>
-    <div data-ng-view></div>
-    <div>Angular Require seed app: v<span app-version></span></div>
+<body>    
+    <div ng-view></div>
+    <div><span app-version></span></div>
     <script src="lib/requirejs/require.js" data-main="js/main.js"></script>
 </body>
 
