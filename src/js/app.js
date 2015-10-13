@@ -7,10 +7,12 @@ define(['angular',
     'angular-aria',
     'angular-material',
     'angular-ui-mask',
+    'jquery',
+    'jjquery-ui',
     'px-config',
     'px-util',
     '../system/controllers/index',
-    '../system/services/index',    
+    '../system/services/index',
     '../custom/controllers/index',
     '../custom/directives/index',
     '../custom/filters/index',
@@ -20,20 +22,20 @@ define(['angular',
         'ngRoute',
         'ngCookies',
         'ngMaterial',
-        'ui.mask',
+        'ui.mask',        
         'pxConfig',
-        'pxUtil', 
+        'pxUtil',
         'system.controllers',
         'system.services',
         'app.controllers',
         'app.directives',
         'app.filters',
-        'app.services'        
+        'app.services'
     ]);
-    
+
     app.init = function() {
         angular.bootstrap(document, ['myApp']);
     };
-    
+
     return app;
 });

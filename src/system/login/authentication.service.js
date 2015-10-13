@@ -1,4 +1,4 @@
-define(['../services/module'], function (services) {
+define(['../services/module'], function(services) {
     'use strict';
 
     services.factory('AuthenticationService', AuthenticationService);
@@ -52,10 +52,10 @@ define(['../services/module'], function (services) {
                 method: 'POST',
                 url: pxConfig.PX_PACKAGE + 'system/login/login.cfc?method=login',
                 params: params
-            }).success(function (response) {
+            }).success(function(response) {
                 callback(response);
             }).
-            error(function (data, status, headers, config) {
+            error(function(data, status, headers, config) {
                 // Erro
                 alert('Ops! Ocorreu um erro inesperado.\nPor favor contate o administrador do sistema!');
             });
@@ -87,7 +87,7 @@ define(['../services/module'], function (services) {
 
         keyStr: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
 
-        encode: function (input) {
+        encode: function(input) {
             var output = "";
             var chr1, chr2, chr3 = "";
             var enc1, enc2, enc3, enc4 = "";
@@ -121,7 +121,7 @@ define(['../services/module'], function (services) {
             return output;
         },
 
-        decode: function (input) {
+        decode: function(input) {
             var output = "";
             var chr1, chr2, chr3 = "";
             var enc1, enc2, enc3, enc4 = "";

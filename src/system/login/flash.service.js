@@ -1,4 +1,4 @@
-define(['../services/module'], function (services) {
+define(['../services/module'], function(services) {
     'use strict';
 
     services.factory('FlashService', FlashService);
@@ -16,7 +16,7 @@ define(['../services/module'], function (services) {
         return service;
 
         function initService() {
-            $rootScope.$on('$locationChangeStart', function () {
+            $rootScope.$on('$locationChangeStart', function() {
                 clearFlashMessage();
             });
 

@@ -7,7 +7,7 @@ define(['./app'], function(app) {
     'use strict';
 
     app.config(function(pxConfig, $routeProvider, $locationProvider) {
-        console.info('app',app);
+        console.info('app', app);
         console.info('pxConfig', pxConfig);
 
         $routeProvider.when('/login', {

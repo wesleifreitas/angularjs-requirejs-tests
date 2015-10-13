@@ -9,6 +9,8 @@ require.config({
         'angular-aria': '../lib/angular-aria/angular-aria.min',
         'angular-material': '../lib/angular-material/angular-material.min',
         'angular-ui-mask': '../lib/angular-ui-mask/dist/mask.min',
+        'jquery': '../lib/jquery/dist/jquery.min',
+        'jjquery-ui': '../lib/jquery-ui/jquery-ui.min',
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
         'string-mask': '../lib/string-mask/src/string-mask',

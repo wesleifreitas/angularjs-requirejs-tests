@@ -1,4 +1,4 @@
-define(['../services/module'], function (services) {
+define(['../services/module'], function(services) {
     'use strict';
 
     services.factory('UserService', UserService);
@@ -48,7 +48,7 @@ define(['../services/module'], function (services) {
         }
 
         function handleError(error) {
-            return function () {
+            return function() {
                 return {
                     success: false,
                     message: error
