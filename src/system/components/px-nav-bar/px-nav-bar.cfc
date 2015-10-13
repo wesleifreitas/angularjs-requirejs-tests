@@ -107,7 +107,7 @@
             </div>
             <span class="element-divider place-right"></span>
             <button class="element image-button image-left place-right bg-dark">Phoenix Project - pxproject.com.br
-                <img id="topMenuImgLogo" ng-src="{{logo}}" />
+                <!--<img id="topMenuImgLogo" ng-src="{{logo}}" />-->
             </button>
         </ul>
     </div>'>

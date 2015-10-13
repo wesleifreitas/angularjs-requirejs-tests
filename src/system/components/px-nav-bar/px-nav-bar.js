@@ -65,20 +65,20 @@ define(['../../directives/module'], function(directives) {
                     method: 'POST',
                     url: pxConfig.PX_PACKAGE + 'system/components/px-nav-bar/px-nav-bar.cfc?method=getView',
                     params: params
-                }).success(function(result) {
-
-                    var headerView = result.qView[0].MEN_NOMECAMINHO.split(result.qView[0].MEN_NOMECAMINHO.split('»')[result.qView[0].MEN_NOMECAMINHO.split('»').length - 1]);
+                }).success(function(response) {
+                    console.info('showView',response);
+                    var headerView = response.qView[0].MEN_NOMECAMINHO.split(response.qView[0].MEN_NOMECAMINHO.split('»')[response.qView[0].MEN_NOMECAMINHO.split('»').length - 1]);
 
                     $scope.view = {};
-                    $scope.view.result = result;
-                    $scope.view.men_id = result.qView[0].MEN_ID;
-                    $scope.view.caminho = result.qView[0].MEN_NOMECAMINHO;
+                    $scope.view.response = response;
+                    $scope.view.men_id = response.qView[0].MEN_ID;
+                    $scope.view.caminho = response.qView[0].MEN_NOMECAMINHO;
                     $scope.view.header = headerView[0];
-                    $scope.view.titulo = result.qView[0].MEN_NOMECAMINHO.split('»')[result.qView[0].MEN_NOMECAMINHO.split('»').length - 1];
-                    $scope.view.icon = result.qView[0].COM_ICON;
+                    $scope.view.titulo = response.qView[0].MEN_NOMECAMINHO.split('»')[response.qView[0].MEN_NOMECAMINHO.split('»').length - 1];
+                    $scope.view.icon = response.qView[0].COM_ICON;
 
-                    $scope.templates[1].name = result.qView[0].COM_VIEW;
-                    $scope.templates[1].url = result.qView[0].COM_VIEW;
+                    $scope.templates[1].name = response.qView[0].COM_VIEW;
+                    $scope.templates[1].url = response.qView[0].COM_VIEW;
 
                 }).
                 error(function(data, status, headers, config) {
