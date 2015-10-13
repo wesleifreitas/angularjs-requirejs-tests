@@ -1,9 +1,7 @@
-(function () {
+define(['../services/module'], function (services) {
     'use strict';
 
-    angular
-        .module('app')
-        .factory('AuthenticationService', AuthenticationService);
+    services.factory('AuthenticationService', AuthenticationService);
 
     AuthenticationService.$inject = ['pxConfig', '$http', '$cookieStore', '$rootScope', '$timeout', 'UserService'];
 
@@ -165,5 +163,4 @@
             return output;
         }
     };
-
-})();
+});

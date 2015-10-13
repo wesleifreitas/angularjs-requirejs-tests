@@ -43,9 +43,6 @@ require.config({
         },
         'angular-ui-mask': {
             deps: ['angular']
-        },
-        'px-util': {
-            deps: ['angular']
         }
 
     }

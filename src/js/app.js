@@ -9,6 +9,8 @@ define(['angular',
     'angular-ui-mask',
     'px-config',
     'px-util',
+    '../system/controllers/index',
+    '../system/services/index',    
     '../custom/controllers/index',
     '../custom/directives/index',
     '../custom/filters/index',
@@ -20,13 +22,15 @@ define(['angular',
         'ngMaterial',
         'ui.mask',
         'pxConfig',
-        'pxUtil',
+        'pxUtil', 
+        'system.controllers',
+        'system.services',
         'app.controllers',
         'app.directives',
         'app.filters',
         'app.services'        
     ]);
-
+    
     app.init = function() {
         angular.bootstrap(document, ['myApp']);
     };

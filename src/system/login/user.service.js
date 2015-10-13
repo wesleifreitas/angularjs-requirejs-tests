@@ -1,9 +1,7 @@
-(function () {
+define(['../services/module'], function (services) {
     'use strict';
 
-    angular
-        .module('app')
-        .factory('UserService', UserService);
+    services.factory('UserService', UserService);
 
     UserService.$inject = ['$http'];
 
@@ -59,4 +57,4 @@
         }
     }
 
-})();
+});

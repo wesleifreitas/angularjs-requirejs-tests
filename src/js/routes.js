@@ -7,13 +7,13 @@ define(['./app'], function(app) {
     'use strict';
 
     app.config(function(pxConfig, $routeProvider, $locationProvider) {
-        console.info('app.config');
+        console.info('app',app);
         console.info('pxConfig', pxConfig);
 
         $routeProvider.when('/login', {
             templateUrl: pxConfig.PX_PACKAGE + 'system/login/login.html',
-            //controller: 'loginCtrl',
-            //controllerAs: 'vm'
+            controller: 'loginCtrl',
+            controllerAs: 'vm'
         });
         $routeProvider.when('/home', {
             templateUrl: pxConfig.PX_PACKAGE + 'system/home/home.html',

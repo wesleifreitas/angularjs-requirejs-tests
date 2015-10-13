@@ -1,9 +1,7 @@
-(function () {
+define(['../services/module'], function (services) {
     'use strict';
 
-    angular
-        .module('app')
-        .factory('FlashService', FlashService);
+    services.factory('FlashService', FlashService);
 
     FlashService.$inject = ['$rootScope'];
 
@@ -52,4 +50,4 @@
         }
     }
 
-})();
+});
