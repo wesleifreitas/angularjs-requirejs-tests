@@ -1,6 +1,7 @@
 require.config({
     paths: {
         'angular': '../lib/angular/angular',
+        'angular-locale_pt-br': '../lib/angular-i18n/angular-locale_pt-br',
         'angular-route': '../lib/angular-route/angular-route',
         'angular-cookies': '../lib/angular-cookies/angular-cookies',
         'angular-resource': '../lib/angular-resource/angular-resource.min',
@@ -14,13 +15,15 @@ require.config({
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
         'string-mask': '../lib/string-mask/src/string-mask',
-        'moment-with-locales': '../lib/moment/min/moment-with-locales.min',
         'px-config': 'px-config',
         'px-util': '../system/utils/js/px-util'
     },
     shim: {
         'angular': {
             exports: 'angular'
+        },
+        'angular-locale_pt-br': {
+            deps: ['angular']
         },
         'angular-route': {
             deps: ['angular']

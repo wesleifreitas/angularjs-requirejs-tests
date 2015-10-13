@@ -9,8 +9,7 @@ define(['angular'], function(ng) {
 			PROJECT_NAME: 'Phoenix Project', // Nome do projeto
 			PROJECT_SRC: 'px-project/src/', // Source do projeto
 			LOCALE: 'pt-BR', // Locale
-			LOGIN_REQUIRED: true // Login obrigatório?
-
+			LOGIN_REQUIRED: false // Login obrigatório?
 		})
 
 	return config;

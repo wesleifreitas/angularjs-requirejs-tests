@@ -31,20 +31,18 @@ define(['./app'], function(app) {
 
     });
 
-    //app.run(function(pxConfig, $rootScope, $location, $cookieStore, $http) {
-    app.run(function(pxConfig) {
-        console.info('app.run');
-        /*
+    app.run(function(pxConfig, $rootScope, $location, $cookieStore, $http) {
+        console.info('app.run', pxConfig);
         // Verifica se o login é obrigatório
         if (pxConfig.LOGIN_REQUIRED) {
-            // keep user logged in after page refresh
+            // manter usuário logado após atualização de página
             $rootScope.globals = $cookieStore.get('globals') || {};
             if ($rootScope.globals.currentUser) {
                 $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
             }
 
             $rootScope.$on('$locationChangeStart', function(event, next, current) {
-                // redirect to login page if not logged in and trying to access a restricted page
+                // redirecionar para a página de login se não estiver logado e tentar acessar uma página restrita                
                 var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
                 var loggedIn = $rootScope.globals.currentUser;
                 if (restrictedPage && !loggedIn) {
@@ -59,7 +57,6 @@ define(['./app'], function(app) {
                 }
             };
         }
-        */
     });
 
     return app;

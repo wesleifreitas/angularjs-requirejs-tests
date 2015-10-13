@@ -1,3 +1,4 @@
 define([
-	'../login/login.controller'
+	'../login/login.controller',
+	'../home/home.controller'
 ], function() {});
