@@ -11,7 +11,10 @@ require.config({
         'angular-material': '../lib/angular-material/angular-material.min',
         'angular-ui-mask': '../lib/angular-ui-mask/dist/mask.min',
         'jquery': '../lib/jquery/dist/jquery.min',
-        'jjquery-ui': '../lib/jquery-ui/jquery-ui.min',
+        'jquery-ui': '../lib/jquery-ui/jquery-ui.min',
+        'dataTables': '../lib/datatables/media/js/jquery.dataTables.min',
+        'metro': '../system/core/external/metro.min',
+        'docs': '../system/core/external/docs',
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
         'string-mask': '../lib/string-mask/src/string-mask',
@@ -48,6 +51,12 @@ require.config({
         },
         'angular-ui-mask': {
             deps: ['angular']
+        },
+        'metro': {
+            deps: ['jquery', 'jquery-ui']
+        },
+        'docs': {
+            deps: ['jquery']
         }
 
     }

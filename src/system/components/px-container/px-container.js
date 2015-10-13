@@ -1,7 +1,7 @@
-define(['./module'], function(directives) {
+define(['../../directives/module'], function(directives) {
     'use strict';
 
-    directives.directive('pxFixed', function(pxViewHeaderConfig) {
+    directives.directive('pxFixed', function() {
         return {
             estrict: 'A',
             scope: {

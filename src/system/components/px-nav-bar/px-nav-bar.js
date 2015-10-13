@@ -1,7 +1,7 @@
 define(['../../directives/module'], function(directives) {
     'use strict';
 
-    directives.directive('pxNavBar', function(pxConfig, $compile, $parse, $timeout) {
+    directives.directive('pxNavBar', ['pxConfig', '$compile', '$parse', '$timeout', function(pxConfig, $compile, $parse, $timeout) {
             return {
                 restrict: 'E',
                 replace: true,
@@ -20,8 +20,8 @@ define(['../../directives/module'], function(directives) {
                     $timeout(scope.getNavBar, 1000);
                 }
             };
-        })
-        .controller('pxNavBarCtrl', function(pxConfig, $scope, $http) {
+        }])
+        .controller('pxNavBarCtrl', ['pxConfig', '$scope', '$http', function(pxConfig, $scope, $http) {
 
             $scope.templates = [{
                 name: '?.html',
@@ -66,7 +66,7 @@ define(['../../directives/module'], function(directives) {
                     url: pxConfig.PX_PACKAGE + 'system/components/px-nav-bar/px-nav-bar.cfc?method=getView',
                     params: params
                 }).success(function(response) {
-                    console.info('showView',response);
+                    console.info('showView', response);
                     var headerView = response.qView[0].MEN_NOMECAMINHO.split(response.qView[0].MEN_NOMECAMINHO.split('»')[response.qView[0].MEN_NOMECAMINHO.split('»').length - 1]);
 
                     $scope.view = {};
@@ -86,5 +86,5 @@ define(['../../directives/module'], function(directives) {
                     alert('Ops! Ocorreu um erro inesperado.\nPor favor contate o administrador do sistema!');
                 });
             };
-        });
+        }]);
 });

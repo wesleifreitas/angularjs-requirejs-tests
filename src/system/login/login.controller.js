@@ -1,7 +1,7 @@
 define(['../controllers/module'], function(controllers) {
     'use strict';
 
-    controllers.controller('loginCtrl', function($location, AuthenticationService, FlashService, pxUtil) {
+    controllers.controller('loginCtrl', ['$location', 'AuthenticationService', 'FlashService', function ($location, AuthenticationService, FlashService) {
 
         var vm = this;
 
@@ -29,5 +29,5 @@ define(['../controllers/module'], function(controllers) {
                 }
             });
         };
-    });
+    }]);
 });
