@@ -15,6 +15,7 @@ require.config({
         'dataTables': '//datatables.net/download/build/nightly/jquery.dataTables.js?_=99823af74ba032ba950452c707888b11',
         'metro': '../system/core/external/metro.min',
         'docs': '../system/core/external/docs',
+        'moment': '../lib/moment/min/moment-with-locales.min',
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
         'string-mask': '../lib/string-mask/src/string-mask',
@@ -52,9 +53,6 @@ require.config({
         'angular-ui-mask': {
             deps: ['angular']
         },
-        "datatables": {
-            "deps": ['jquery']
-        },
         'metro': {
             deps: ['jquery', 'jquery-ui']
         },
@@ -62,6 +60,11 @@ require.config({
             deps: ['jquery']
         }
 
+    },
+    config: {
+        moment: {
+            noGlobal: true
+        }
     }
 });
 

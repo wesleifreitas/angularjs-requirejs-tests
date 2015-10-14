@@ -561,7 +561,7 @@ define(['../../directives/module'], function(directives) {
                                         // Se possuir moment
                                         // http://momentjs.com/
                                         if (item.moment) {
-                                            data[item.field] = moment(Date.parse(data[item.field])).format(item.moment);
+                                            //data[item.field] = moment(Date.parse(data[item.field])).format(item.moment);
                                         }
 
                                         // Se possuir numeral

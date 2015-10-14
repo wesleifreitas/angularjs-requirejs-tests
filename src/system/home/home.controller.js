@@ -4,9 +4,11 @@ define(['../controllers/module'], function(controllers) {
     controllers.controller('homeCtrl', ['pxConfig', 'UserService', '$rootScope', '$scope', '$location', '$timeout', '$mdSidenav', '$mdUtil', '$log', '$locale', function(pxConfig, UserService, $rootScope, $scope, $location, $timeout, $mdSidenav, $mdUtil, $log, $locale) {
 
             if (pxConfig.LOCALE) {
-                // Definir locale da lib moment.js
-                // http://momentjs.com/docs/
-                moment.locale(pxConfig.LOCALE);
+
+                // Carrega moment.js como moment
+                require(['moment'], function(moment) {
+                    moment.locale(pxConfig.LOCALE);                    
+                });
 
                 // Definir language da lib numeral.js
                 // http://numeraljs.com/
