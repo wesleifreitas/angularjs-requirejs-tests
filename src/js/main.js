@@ -12,7 +12,7 @@ require.config({
         'angular-ui-mask': '../lib/angular-ui-mask/dist/mask.min',
         'jquery': '../lib/jquery/dist/jquery.min',
         'jquery-ui': '../lib/jquery-ui/jquery-ui.min',
-        'dataTables': '../lib/datatables/media/js/jquery.dataTables.min',
+        'dataTables': '//datatables.net/download/build/nightly/jquery.dataTables.js?_=99823af74ba032ba950452c707888b11',
         'metro': '../system/core/external/metro.min',
         'docs': '../system/core/external/docs',
         'numeral': '../lib/numeral/min/numeral.min',
@@ -51,6 +51,9 @@ require.config({
         },
         'angular-ui-mask': {
             deps: ['angular']
+        },
+        "datatables": {
+            "deps": ['jquery']
         },
         'metro': {
             deps: ['jquery', 'jquery-ui']

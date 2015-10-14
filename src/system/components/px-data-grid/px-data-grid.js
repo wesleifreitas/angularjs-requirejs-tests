@@ -233,10 +233,14 @@ define(['../../directives/module'], function(directives) {
                         }
                     };
 
-                    // Inicializa dataTable
-                    $('#pxTable').dataTable(
-                        dataTableConfig
-                    );
+                    requirejs(["datatables"], function() {
+                        // Inicializa dataTable
+                        $('#pxTable').dataTable(
+                            dataTableConfig
+                        );
+                    });
+
+
 
                     $scope.pxTableReady = false;
 
@@ -246,9 +250,10 @@ define(['../../directives/module'], function(directives) {
                         $scope.getData(0, $scope.rowsProcess);
                     }
 
-                    var table = $('#pxTable').DataTable();
-
-                    $scope.internalControl.table = $('#pxTable').DataTable();
+                    requirejs(["datatables"], function() {
+                        var table = $('#pxTable').DataTable();
+                        $scope.internalControl.table = $('#pxTable').DataTable();
+                    });
 
                     // Evento page.dt
                     // https://datatables.net/reference/event/page
@@ -367,7 +372,7 @@ define(['../../directives/module'], function(directives) {
                     });
 
                     // Evento draw
-                    table.on('draw', function() {
+                    $('#pxTable').on('draw', function() {
                         // Atualizar dataTable (Selecionar tudo)
                         $scope.updateDataTableSelectAllCtrl(table);
                     });
@@ -481,7 +486,10 @@ define(['../../directives/module'], function(directives) {
                     // Neste caso é feito um 'clear' na listagem
                     if (rowFrom === 0) {
                         $scope.reset();
-                        $('#pxTable').DataTable().clear().draw();
+
+                        requirejs(["datatables"], function() {
+                            $('#pxTable').DataTable().clear().draw();
+                        });
                     }
 
                     $http({
