@@ -12,13 +12,13 @@ require.config({
         'angular-ui-mask': '../lib/angular-ui-mask/dist/mask.min',
         'jquery': '../lib/jquery/dist/jquery.min',
         'jquery-ui': '../lib/jquery-ui/jquery-ui.min',
-        'dataTables': '../lib/datatables/media/js/jquery.dataTables.min',
-        'metro': '../system/core/external/metro.min',
-        'docs': '../system/core/external/docs',
+        'dataTables': '../lib/datatables/media/js/jquery.dataTables.min',        
         'moment': '../lib/moment/min/moment-with-locales.min',
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
         'px-config': 'px-config',
+        'metro': '../system/core/external/metro.min',
+        'docs': '../system/core/external/docs',
         'px-util': '../system/utils/js/px-util'
     },
     shim: {
