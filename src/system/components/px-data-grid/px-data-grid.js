@@ -257,7 +257,7 @@ define(['../../directives/module'], function(directives) {
                     // https://datatables.net/reference/event/page
                     $('#pxTable').on('page.dt', function() {
 
-                        var info = table.page.info();
+                        var info = $scope.internalControl.table.page.info();
 
                         if (info.page === info.pages - 1) {
 
@@ -272,8 +272,7 @@ define(['../../directives/module'], function(directives) {
                         }
 
                         //table.context[0].oLanguage.sInfo = 'Monstrando de ' + info.start + ' a ' + info.end + ' no total de ' + info.recordsTotal + ' registros carregados.' + '<br>Total de registros na base de dados: ' + $scope.recordCount;
-                        table.context[0].oLanguage.sInfo = info.recordsTotal + ' registros carregados.' + ' Total de registros na base de dados: ' + $scope.recordCount;
-
+                        $scope.internalControl.table.context[0].oLanguage.sInfo = info.recordsTotal + ' registros carregados.' + ' Total de registros na base de dados: ' + $scope.recordCount;
                     });
 
                     // Atualizar dataTable (Selecionar tudo)
@@ -315,7 +314,7 @@ define(['../../directives/module'], function(directives) {
                         var $row = $(this).closest('tr');
 
                         // Dados da linha
-                        var data = table.row($row).data();
+                        var data = $scope.internalControl.table.row($row).data();
 
                         // ID da linha
                         var rowId = data.pxDataGridRowNumber;
@@ -343,7 +342,7 @@ define(['../../directives/module'], function(directives) {
                         }
 
                         // Atualizar dataTable (selecionar tudo)
-                        $scope.updateDataTableSelectAllCtrl(table);
+                        $scope.updateDataTableSelectAllCtrl($scope.internalControl.table);
 
                         $scope.$apply(function() {
                             // Chama função definida em px-item-click
