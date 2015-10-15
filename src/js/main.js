@@ -18,7 +18,6 @@ require.config({
         'moment': '../lib/moment/min/moment-with-locales.min',
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
-        'string-mask': '../lib/string-mask/src/string-mask',
         'px-config': 'px-config',
         'px-util': '../system/utils/js/px-util'
     },
@@ -58,12 +57,6 @@ require.config({
         },
         'docs': {
             deps: ['jquery']
-        }
-
-    },
-    config: {
-        moment: {
-            noGlobal: true
         }
     }
 });

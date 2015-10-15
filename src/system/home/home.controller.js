@@ -2,7 +2,7 @@ define(['../controllers/module'], function(controllers) {
     'use strict';
 
     controllers.controller('homeCtrl', ['pxConfig', 'UserService', '$rootScope', '$scope', '$location', '$timeout', '$mdSidenav', '$mdUtil', '$log', '$locale', function(pxConfig, UserService, $rootScope, $scope, $location, $timeout, $mdSidenav, $mdUtil, $log, $locale) {
-
+            
             if (pxConfig.LOCALE) {
 
                 // Carrega moment.js como moment
@@ -11,8 +11,9 @@ define(['../controllers/module'], function(controllers) {
                 });
 
                 // Definir language da lib numeral.js
-                // http://numeraljs.com/
+                // http://numeraljs.com/                               
                 numeral.language(pxConfig.LOCALE.toLowerCase());
+               
             }
 
             var vm = this;
@@ -65,7 +66,7 @@ define(['../controllers/module'], function(controllers) {
                     $mdSidenav(navID)
                         .toggle()
                         .then(function() {
-                            $log.debug("toggle " + navID + " is done");
+                            //$log.debug("toggle " + navID + " is done");
                         });
                 }, 300);
                 return debounceFn;
@@ -80,7 +81,7 @@ define(['../controllers/module'], function(controllers) {
             $scope.close = function() {
                 $mdSidenav('left').close()
                     .then(function() {
-                        $log.debug("close LEFT is done");
+                        //$log.debug("close LEFT is done");
                     });
             };
         })
@@ -88,7 +89,7 @@ define(['../controllers/module'], function(controllers) {
             $scope.close = function() {
                 $mdSidenav('right').close()
                     .then(function() {
-                        $log.debug("close RIGHT is done");
+                        //$log.debug("close RIGHT is done");
                     });
             };
         });

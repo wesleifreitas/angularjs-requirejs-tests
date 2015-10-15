@@ -6,10 +6,7 @@
 define(['./app'], function(app) {
     'use strict';
 
-    app.config(function(pxConfig, $routeProvider, $locationProvider) {
-        console.info('app', app);
-        console.info('pxConfig', pxConfig);
-
+    app.config(function(pxConfig, $routeProvider, $locationProvider) {   
         $routeProvider.when('/login', {
             templateUrl: pxConfig.PX_PACKAGE + 'system/login/login.html',
             controller: 'loginCtrl',
@@ -31,9 +28,7 @@ define(['./app'], function(app) {
 
     });
 
-    app.run(function(pxConfig, $rootScope, $location, $cookieStore, $http) {
-        console.info('app.run', pxConfig);
-    
+    app.run(function(pxConfig, $rootScope, $location, $cookieStore, $http) {            
         // Verifica se o login é obrigatório
         if (pxConfig.LOGIN_REQUIRED) {
             // manter usuário logado após atualização de página

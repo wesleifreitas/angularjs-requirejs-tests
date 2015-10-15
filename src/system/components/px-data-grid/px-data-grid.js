@@ -1,7 +1,7 @@
 define(['../../directives/module'], function(directives) {
     'use strict';
 
-    directives.directive('pxDataGrid', ['pxConfig', 'pxDataGridService', 'pxUtil', '$timeout', '$sce', function(pxConfig, pxDataGridService, pxUtil, $timeout, $sce) {
+    directives.directive('pxDataGrid', ['pxConfig', 'pxDataGridService', 'pxUtil', 'pxMaskUtil', '$timeout', '$sce', function(pxConfig, pxDataGridService, pxUtil, pxMaskUtil, $timeout, $sce) {
         return {
             restrict: 'E',
             replace: true,
@@ -239,8 +239,6 @@ define(['../../directives/module'], function(directives) {
                             dataTableConfig
                         );
                     });
-
-
 
                     $scope.pxTableReady = false;
 
@@ -531,31 +529,28 @@ define(['../../directives/module'], function(directives) {
 
                                         // Se possuir máscara
                                         // https://github.com/the-darc/string-mask
-                                        if (item.stringMask) {
-                                            var formatter;
-
+                                        if (item.stringMask) {                                
                                             switch (item.stringMask) {
                                                 case 'cpf':
-                                                    formatter = new StringMask('###.###.###-##');
+                                                    data[item.field] = pxMaskUtil.maskFormat(data[item.field], '###.###.###-##').result;
                                                     break;
                                                 case 'cnpj':
-                                                    data[item.field] = '##.###.###/####-##';
+                                                    data[item.field] = pxMaskUtil.maskFormat(data[item.field],'##.###.###/####-##').result;
                                                     break;
                                                 case 'cep':
-                                                    data[item.field] = '#####-###';
+                                                    data[item.field] = pxMaskUtil.maskFormat(data[item.field],'#####-###').result;
                                                     break;
                                                 case 'brPhone':
                                                     if (data[item.field].length === 11) {
-                                                        formatter = new StringMask('(##) #####-####');
+                                                        data[item.field] = pxMaskUtil.maskFormat(data[item.field], '(##) #####-####').result;
                                                     } else {
-                                                        formatter = new StringMask('(##) #####-####');
+                                                        data[item.field] = pxMaskUtil.maskFormat(data[item.field], '(##) #####-####').result;
                                                     }
                                                     break;
                                                 default:
-                                                    formatter = new StringMask(item.stringMask);
+                                                    data[item.field] = pxMaskUtil.maskFormat(data[item.field], item.stringMask).result;                                                    
                                                     break;
-                                            }
-                                            data[item.field] = formatter.apply(data[item.field]);
+                                            }                                                                                    
                                         }
 
                                         // Se possuir moment

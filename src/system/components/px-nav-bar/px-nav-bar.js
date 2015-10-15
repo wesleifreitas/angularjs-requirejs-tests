@@ -44,8 +44,7 @@ define(['../../directives/module'], function(directives) {
                     method: 'POST',
                     url: pxConfig.PX_PACKAGE + 'system/components/px-nav-bar/px-nav-bar.cfc?method=getNavBar',
                     params: params
-                }).success(function(response) {
-                    console.info('getNavBar: ', response);
+                }).success(function(response) {                    
                     $scope.navBar = response.navBar;
                 }).
                 error(function(data, status, headers, config) {
@@ -66,7 +65,7 @@ define(['../../directives/module'], function(directives) {
                     url: pxConfig.PX_PACKAGE + 'system/components/px-nav-bar/px-nav-bar.cfc?method=getView',
                     params: params
                 }).success(function(response) {
-                    console.info('showView', response);
+                                   
                     var headerView = response.qView[0].MEN_NOMECAMINHO.split(response.qView[0].MEN_NOMECAMINHO.split('»')[response.qView[0].MEN_NOMECAMINHO.split('»').length - 1]);
 
                     $scope.view = {};
