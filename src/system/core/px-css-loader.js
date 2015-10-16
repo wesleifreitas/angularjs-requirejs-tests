@@ -13,6 +13,16 @@ define(['../services/module'], function(services) {
         return service;
 
         function load() {
+
+
+            var element = document.getElementById('px-loading'),
+                style = window.getComputedStyle(element),
+                display = style.getPropertyValue('display');
+
+            if (display == 'none') {
+                return;
+            }
+            
             var cssLoader = [{
                 file: pxConfig.PX_PACKAGE + 'system/core/external/metro-bootstrap.css'
             }, {
