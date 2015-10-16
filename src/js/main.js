@@ -12,7 +12,7 @@ require.config({
         'angular-ui-mask': '../lib/angular-ui-mask/dist/mask.min',
         'jquery': '../lib/jquery/dist/jquery.min',
         'jquery-ui': '../lib/jquery-ui/jquery-ui.min',
-        'dataTables': '../lib/datatables/media/js/jquery.dataTables.min',        
+        'dataTables': '../lib/datatables/media/js/jquery.dataTables.min',
         'moment': '../lib/moment/min/moment-with-locales.min',
         'numeral': '../lib/numeral/min/numeral.min',
         'numeral-languages': '../lib/numeral/min/languages.min',
@@ -57,6 +57,9 @@ require.config({
         },
         'docs': {
             deps: ['jquery']
+        },
+        'numeral-languages': {
+            deps: ['numeral']
         }
     }
 });

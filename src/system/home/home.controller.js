@@ -13,8 +13,10 @@ define(['../controllers/module'], function(controllers) {
                 });
 
                 // Definir language da lib numeral.js
-                // http://numeraljs.com/                               
-                numeral.language(pxConfig.LOCALE.toLowerCase());
+                // http://numeraljs.com/                                               
+                //require(['numeral'], function(numeral) {
+                    numeral.language(pxConfig.LOCALE.toLowerCase());
+                //});
             }
 
             var vm = this;
