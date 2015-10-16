@@ -1,19 +1,20 @@
 define(['../controllers/module'], function(controllers) {
     'use strict';
 
-    controllers.controller('homeCtrl', ['pxConfig', 'UserService', '$rootScope', '$scope', '$location', '$timeout', '$mdSidenav', '$mdUtil', '$log', '$locale', function(pxConfig, UserService, $rootScope, $scope, $location, $timeout, $mdSidenav, $mdUtil, $log, $locale) {
-            
+    controllers.controller('homeCtrl', ['pxConfig', 'pxCssLoader', 'UserService', '$rootScope', '$scope', '$location', '$timeout', '$mdSidenav', '$mdUtil', '$log', '$locale', function(pxConfig, pxCssLoader, UserService, $rootScope, $scope, $location, $timeout, $mdSidenav, $mdUtil, $log, $locale) {
+
+            pxCssLoader.load();
+
             if (pxConfig.LOCALE) {
 
                 // Carrega moment.js como moment
                 require(['moment'], function(moment) {
-                    moment.locale(pxConfig.LOCALE);                    
+                    moment.locale(pxConfig.LOCALE);
                 });
 
                 // Definir language da lib numeral.js
                 // http://numeraljs.com/                               
                 numeral.language(pxConfig.LOCALE.toLowerCase());
-               
             }
 
             var vm = this;

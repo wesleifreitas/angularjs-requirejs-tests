@@ -6,7 +6,7 @@
 define(['./app'], function(app) {
     'use strict';
 
-    app.config(function(pxConfig, $routeProvider, $locationProvider) {
+    app.config(['pxConfig', '$routeProvider', '$locationProvider', function(pxConfig, $routeProvider, $locationProvider) {
         $routeProvider.when('/login', {
             templateUrl: pxConfig.PX_PACKAGE + 'system/login/login.html',
             controller: 'loginCtrl',
@@ -25,14 +25,13 @@ define(['./app'], function(app) {
         $routeProvider.otherwise({
             redirectTo: '/login'
         });
-
+        
+        /*
         // Carregar CSS
         var cssLoader = [{
             file: pxConfig.PX_PACKAGE + 'system/core/external/metro-bootstrap.css'
         }, {
             file: pxConfig.PX_PACKAGE + 'system/core/external/metro-bootstrap-responsive.css'
-        }, {
-            file: pxConfig.PX_PACKAGE + 'system/core/px-project.css'
         }, {
             file: pxConfig.LIB + 'bootstrap/dist/css/bootstrap.min.css'
         }, {
@@ -46,6 +45,8 @@ define(['./app'], function(app) {
         }, {
             file: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
         }, {
+            file: pxConfig.PX_PACKAGE + 'system/login/login.css'
+        }, {
             file: pxConfig.PX_PACKAGE + 'system/components/px-view-header/px-view-header.css'
         }, {
             file: pxConfig.PX_PACKAGE + 'system/components/px-data-grid/px-data-grid.css'
@@ -54,12 +55,13 @@ define(['./app'], function(app) {
         }];
 
         // Loop em cssLoader
-        $.each(cssLoader, function(i, item) {           
+        $.each(cssLoader, function(i, item) {
             $('<link rel="stylesheet"/>').attr('href', item.file).appendTo($('head'));
         });
         $('<link rel="stylesheet"/>').attr('href', document.location.pathname + 'styles.css').appendTo($('head'));
-
-    });
+        */
+        //alert('route.js fim')
+    }]);
 
     app.run(function(pxConfig, $rootScope, $location, $cookieStore, $http) {
         // Verifica se o login é obrigatório

@@ -1,8 +1,10 @@
 define(['../controllers/module'], function(controllers) {
     'use strict';
 
-    controllers.controller('loginCtrl', ['$location', 'AuthenticationService', 'FlashService', function ($location, AuthenticationService, FlashService) {
+    controllers.controller('loginCtrl', ['pxCssLoader', '$location', 'AuthenticationService', 'FlashService', function(pxCssLoader, $location, AuthenticationService, FlashService) {
 
+        pxCssLoader.load();
+       
         var vm = this;
 
         vm.initController = function initController() {

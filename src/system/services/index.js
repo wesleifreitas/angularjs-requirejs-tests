@@ -1,4 +1,5 @@
 define([
+	'../core/px-css-loader',
 	'../login/user.service',
 	'../login/authentication.service',
 	'../login/flash.service',
